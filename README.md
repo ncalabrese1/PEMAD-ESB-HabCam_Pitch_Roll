@@ -154,14 +154,14 @@ The extraction script processes imagery in chunks of 2,500 frames to prevent RAM
 ## 5. Mathematical Context & GAMM Bridge
 
 ### The Operational Baseline (`FOV()`)
-The extraction pipeline replicates the legacy HabCam operational projection ($16\text{ mm}$ nominal lens $\times 1.33$ underwater refractive index $= 0.02128\text{ m}$ focal length, idealized 3D Tait-Bryan rotations, and a uniform scalar `MMPIX` resolution). Near level flight ($|\theta_{\text{pitch}}| \le 4^\circ$, $|\theta_{\text{roll,adj}}| \le 4^\circ$, central sensor region), empirical bias is negligible ($+0.52\% \pm 1.07\%\text{ SD}$), whereas across the full $\pm 35^\circ$ attitude envelope uncorrected bias averages $-0.88\% \pm 4.33\%\text{ SD}$ (Port) and $-1.13\% \pm 4.50\%\text{ SD}$ (Starboard).
+The extraction pipeline replicates the legacy HabCam operational projection (16 mm nominal lens $\times$ 1.33 underwater refractive index = 0.02128 m focal length, idealized 3D Tait-Bryan rotations, and a uniform scalar `MMPIX` resolution). Near level flight ($\vert{}\theta_{\text{pitch}}\vert{} \le 4^\circ$, $\vert{}\theta_{\text{roll,adj}}\vert{} \le 4^\circ$, central sensor region), empirical bias is negligible (+0.52% ± 1.07% SD), whereas across the full $\pm 35^\circ$ attitude envelope uncorrected bias averages -0.88% ± 4.33% SD (Port) and -1.13% ± 4.50% SD (Starboard).
 
 ### The GAMM Correction Architecture (`fit_habcam_bias_gamm.R`)
 Downstream modeling fits a Generalized Additive Mixed Model via `mgcv::bam()` to remove attitude-induced scaling distortion:
 
-$$
-\text{bias\_pct} \sim \beta_0 + \beta_1(\text{camera}) + te(\theta_{\text{pitch}}, \theta_{\text{roll,adj}}, Z_{\text{alt}}) + s(\theta, \text{bs} = \text{"cc"}) + s(u, v) + b_{\text{image}}
-$$
+```math
+\text{bias\textunderscore pct} \sim \beta_0 + \beta_1(\text{camera}) + te(\theta_{\text{pitch}}, \theta_{\text{roll,adj}}, Z_{\text{alt}}) + s(\theta, \text{bs} = \text{"cc"}) + s(u, v) + b_{\text{image}}
+```
 
 - $\beta_1(\text{camera})$: Parametric offset capturing the baseline mounting/calibration disparity between Port and Starboard pods.
 - $te(\theta_{\text{pitch}}, \theta_{\text{roll,adj}}, Z_{\text{alt}})$: Trivariate tensor-product smooth modeling nonlinear compound pitch–roll–altitude scaling distortion.
