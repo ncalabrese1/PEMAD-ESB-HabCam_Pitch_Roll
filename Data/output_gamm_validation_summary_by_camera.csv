@@ -1,0 +1,4 @@
+Camera,Val_Frames,Val_Segments,Raw_RMSE_pct,GAMM_RMSE_pct,RMSE_Drop_pct,Raw_MAE_pct,GAMM_MAE_pct,Raw_MdAE_pct,GAMM_MdAE_pct,Within_3pct_Raw,Within_3pct_New,Within_5pct_Raw,Within_5pct_New
+Port (Left),6268,1602288,4.43,3.93,11.2,3.12,2.86,2.1,2.07,62.6,64.7,79.5,83.1
+Starboard (Right),6285,1596900,4.62,3.91,15.5,3.17,2.75,2.07,1.89,63.3,67.2,80,84.5
+Combined Stereo,11342,3199188,4.53,3.92,13.4,3.15,2.8,2.09,1.98,62.9,66,79.7,83.8

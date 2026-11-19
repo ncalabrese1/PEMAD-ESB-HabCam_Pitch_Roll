@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.Ruserdata
+Extraction_Checkpoints/segments_chunk_*.rds
+Data/calibrated_segments_raw.rds
+Data/calibrated_segments_clean.rds
+Data/habcam_validation_all_models.rds
+Data/habcam_validation_evaluated_clean.rds
+.RData
+100
+.RData
+100

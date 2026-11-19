@@ -1,0 +1,7 @@
+Camera,Model Variant,Train Segments,Train Frames,Adj R2,Deviance Explained (%),Residual Variance (%^2),Level Flight Baseline (%),Attitude Alt Effective Degrees of Freedom,Sensor Plane Effective Degrees of Freedom,Tilt x Sensor Effective Degrees of Freedom,Orientation Effective Degrees of Freedom,Total Effective Degrees of Freedom
+Port (Left),1. Random-Effects GAMM (10k),"2,561,639","9,968",0.625,62.6%,7.02,-1.35 (0.08),11.47,59.92,-,9.00,10000.9
+Port (Left),2. Additive Fixed-Effects GAM (100%),"6,482,550",All (100%),0.430,43.0%,10.18,+1.89 (0.03),142.84,94.66,-,9.00,247.5
+Port (Left),3. Tilt x Sensor Interaction GAM (100%),"6,482,550",All (100%),0.621,62.1%,6.77,+2.22 (0.03),142.87,98.26,47.98 / 47.99,9.00,347.1
+Starboard (Right),1. Random-Effects GAMM (10k),"2,534,923","9,967",0.632,63.3%,7.41,+0.26 (0.13),33.53,60.09,-,9.00,9993.8
+Starboard (Right),2. Additive Fixed-Effects GAM (100%),"6,420,685",All (100%),0.455,45.6%,10.49,+2.86 (0.03),142.87,94.34,-,9.00,247.2
+Starboard (Right),3. Tilt x Sensor Interaction GAM (100%),"6,420,685",All (100%),0.627,62.7%,7.18,+3.00 (0.03),142.92,97.51,47.97 / 47.99,9.00,346.4
